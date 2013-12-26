@@ -59,6 +59,7 @@ namespace HyperAudit {
                     string systemName = systemDetailsCombo.SelectedItem.ToString();
                     auditor.refreshSystemDetails(systemName);
                     detailsGridView.Refresh();
+                    updateStatusBar(systemName);
 
                 } catch (HAException exception) {
                     MessageBox.Show(exception.Message);
@@ -158,6 +159,47 @@ namespace HyperAudit {
                 e.Value = "Present";
             }
         }
+
+
+        /// <summary>
+        /// Updates the statusbar with media counts for the given system
+        /// </summary>
+        private void updateStatusBar(string systemName) {
+            DataRow[] result = auditData.allSystemsTable.Select(String.Format("system = '{0}'", systemName));
+            AuditData.allSystemsTableRow systemInfo = (AuditData.allSystemsTableRow)result[0];
+            updateStatusLabel(lblDetailsRoms, systemInfo.ROMs, "ROMs");
+            updateStatusLabel(lblDetailsWheels, systemInfo.WheelArt, "Wheels");
+            updateStatusLabel(lblDetailsVideos, systemInfo.Videos, "Videos");
+            updateStatusLabel(lblDetailsThemes, systemInfo.Themes, "Themes");
+            updateStatusLabel(lblDetailsArt1, systemInfo.Artwork1, "Art 1");
+            updateStatusLabel(lblDetailsArt2, systemInfo.Artwork2, "Art 2");
+            updateStatusLabel(lblDetailsArt3, systemInfo.Artwork3, "Art 3");
+            updateStatusLabel(lblDetailsArt4, systemInfo.Artwork4, "Art 4");
+        }
+
+        /// <summary>
+        /// Internal helper function to update a label's value and colour with the result
+        /// of a value from the database
+        /// </summary>
+        /// <param name="lbl">UI Label to be updated</param>
+        /// <param name="dataval">Data value from the database</param>
+        /// <param name="suffix">Suffix string to append after the item count</param>
+        private void updateStatusLabel(Label lbl, string dataval, string suffix) {
+            string val = dataval.ToLower();
+            string[] parts = val.Split('/');
+            int found = int.Parse(parts[0]);
+            parts = parts[1].Split(',');
+            int total = int.Parse(parts[0]);
+
+            if (found == total) {
+                lbl.ForeColor = kColorTextGood;
+            } else {
+                lbl.ForeColor = kColorTextBad;
+            }
+
+            lbl.Text = String.Format("{0}/{1} {2}", found, total, suffix);
+        }
+
 
         // UI handlers
         private void refreshAllBtn_Click(object sender, EventArgs e) {
