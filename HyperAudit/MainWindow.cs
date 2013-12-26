@@ -68,6 +68,45 @@ namespace HyperAudit {
 
 
         /// <summary>
+        /// Updates the filter for the details view
+        /// </summary>
+        private void filterDetailsList(object sender, EventArgs e) {
+
+            // Update checkbox enabled status
+            bool checkboxesEnabled = filterCombo.SelectedIndex > 0;
+            chkIgnoreTheme.Enabled = checkboxesEnabled;
+            chkIgnoreArtwork1.Enabled = checkboxesEnabled;
+            chkIgnoreArtwork2.Enabled = checkboxesEnabled;
+            chkIgnoreArtwork3.Enabled = checkboxesEnabled;
+            chkIgnoreArtwork4.Enabled = checkboxesEnabled;
+
+            string query = "";
+            if (filterCombo.SelectedIndex > 0) {
+                // Bit of a hack, relies on only being 3 values in list
+                bool val = filterCombo.SelectedIndex == 2;
+                string op = val ? "AND" : "OR";
+
+                query += "(";
+                query += String.Format("ROM='{0}' {1} ", val, op);
+                query += String.Format("WheelArt='{0}' {1} ", val, op);
+                query += String.Format("Video='{0}' ", val, op);
+                query += chkIgnoreTheme.Checked ? "" : String.Format("{0} Theme='{1}' ", op, val);
+                query += chkIgnoreArtwork1.Checked ? "" : String.Format("{0} Artwork1='{1}' ", op, val);
+                query += chkIgnoreArtwork2.Checked ? "" : String.Format("{0} Artwork2='{1}' ", op, val);
+                query += chkIgnoreArtwork3.Checked ? "" : String.Format("{0} Artwork3='{1}' ", op, val);
+                query += chkIgnoreArtwork4.Checked ? "" : String.Format("{0} Artwork4='{1}' ", op, val);
+                query += ")";
+            }
+            if (searchField.Text.Length > 0) {
+                if (query.Length > 0)
+                    query += " AND ";
+                query += String.Format("Game LIKE '*{0}*'", searchField.Text);
+            }
+            detailsSource.Filter = query;
+        }
+
+
+        /// <summary>
         /// Handler for setting the cell style for the all systems audit view.
         /// </summary>
         private void allSystemsGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {

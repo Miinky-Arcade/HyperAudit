@@ -454,42 +454,50 @@
             // chkIgnoreTheme
             // 
             this.chkIgnoreTheme.AutoSize = true;
+            this.chkIgnoreTheme.Enabled = false;
             this.chkIgnoreTheme.Location = new System.Drawing.Point(423, 36);
             this.chkIgnoreTheme.Name = "chkIgnoreTheme";
             this.chkIgnoreTheme.Size = new System.Drawing.Size(59, 17);
             this.chkIgnoreTheme.TabIndex = 14;
             this.chkIgnoreTheme.Text = "Theme";
             this.chkIgnoreTheme.UseVisualStyleBackColor = true;
+            this.chkIgnoreTheme.CheckedChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // chkIgnoreArtwork4
             // 
             this.chkIgnoreArtwork4.AutoSize = true;
+            this.chkIgnoreArtwork4.Enabled = false;
             this.chkIgnoreArtwork4.Location = new System.Drawing.Point(384, 36);
             this.chkIgnoreArtwork4.Name = "chkIgnoreArtwork4";
             this.chkIgnoreArtwork4.Size = new System.Drawing.Size(32, 17);
             this.chkIgnoreArtwork4.TabIndex = 13;
             this.chkIgnoreArtwork4.Text = "4";
             this.chkIgnoreArtwork4.UseVisualStyleBackColor = true;
+            this.chkIgnoreArtwork4.CheckedChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // chkIgnoreArtwork3
             // 
             this.chkIgnoreArtwork3.AutoSize = true;
+            this.chkIgnoreArtwork3.Enabled = false;
             this.chkIgnoreArtwork3.Location = new System.Drawing.Point(345, 36);
             this.chkIgnoreArtwork3.Name = "chkIgnoreArtwork3";
             this.chkIgnoreArtwork3.Size = new System.Drawing.Size(32, 17);
             this.chkIgnoreArtwork3.TabIndex = 12;
             this.chkIgnoreArtwork3.Text = "3";
             this.chkIgnoreArtwork3.UseVisualStyleBackColor = true;
+            this.chkIgnoreArtwork3.CheckedChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // chkIgnoreArtwork2
             // 
             this.chkIgnoreArtwork2.AutoSize = true;
+            this.chkIgnoreArtwork2.Enabled = false;
             this.chkIgnoreArtwork2.Location = new System.Drawing.Point(306, 36);
             this.chkIgnoreArtwork2.Name = "chkIgnoreArtwork2";
             this.chkIgnoreArtwork2.Size = new System.Drawing.Size(32, 17);
             this.chkIgnoreArtwork2.TabIndex = 11;
             this.chkIgnoreArtwork2.Text = "2";
             this.chkIgnoreArtwork2.UseVisualStyleBackColor = true;
+            this.chkIgnoreArtwork2.CheckedChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // lblIgnore
             // 
@@ -503,12 +511,14 @@
             // chkIgnoreArtwork1
             // 
             this.chkIgnoreArtwork1.AutoSize = true;
+            this.chkIgnoreArtwork1.Enabled = false;
             this.chkIgnoreArtwork1.Location = new System.Drawing.Point(268, 36);
             this.chkIgnoreArtwork1.Name = "chkIgnoreArtwork1";
             this.chkIgnoreArtwork1.Size = new System.Drawing.Size(32, 17);
             this.chkIgnoreArtwork1.TabIndex = 9;
             this.chkIgnoreArtwork1.Text = "1";
             this.chkIgnoreArtwork1.UseVisualStyleBackColor = true;
+            this.chkIgnoreArtwork1.CheckedChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // lblSearch
             // 
@@ -527,6 +537,7 @@
             this.searchField.Name = "searchField";
             this.searchField.Size = new System.Drawing.Size(223, 20);
             this.searchField.TabIndex = 7;
+            this.searchField.TextChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // lblFilter
             // 
@@ -549,6 +560,7 @@
             this.filterCombo.Name = "filterCombo";
             this.filterCombo.Size = new System.Drawing.Size(159, 21);
             this.filterCombo.TabIndex = 5;
+            this.filterCombo.SelectedIndexChanged += new System.EventHandler(this.filterDetailsList);
             // 
             // exportDetailsBtn
             // 
