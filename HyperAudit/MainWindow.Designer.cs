@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.mainTabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.systemCountLbl = new System.Windows.Forms.Label();
+            this.gameCountLbl = new System.Windows.Forms.Label();
             this.allSystemsGridView = new System.Windows.Forms.DataGridView();
             this.systemDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rOMsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,11 +51,18 @@
             this.menuVideoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.allSystemsSource = new System.Windows.Forms.BindingSource(this.components);
             this.auditData = new HyperAudit.AuditData();
-            this.gameCountLbl = new System.Windows.Forms.Label();
-            this.systemCountLbl = new System.Windows.Forms.Label();
             this.refreshAllBtn = new System.Windows.Forms.Button();
             this.exportAllBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lblDetailsRoms = new System.Windows.Forms.Label();
+            this.lblDetailsWheels = new System.Windows.Forms.Label();
+            this.lblDetailsVideos = new System.Windows.Forms.Label();
+            this.lblDetailsThemes = new System.Windows.Forms.Label();
+            this.lblDetailsArt1 = new System.Windows.Forms.Label();
+            this.lblDetailsArt2 = new System.Windows.Forms.Label();
+            this.lblDetailsArt3 = new System.Windows.Forms.Label();
+            this.lblDetailsArt4 = new System.Windows.Forms.Label();
             this.chkIgnoreTheme = new System.Windows.Forms.CheckBox();
             this.chkIgnoreArtwork4 = new System.Windows.Forms.CheckBox();
             this.chkIgnoreArtwork3 = new System.Windows.Forms.CheckBox();
@@ -68,25 +78,26 @@
             this.detailsGridView = new System.Windows.Forms.DataGridView();
             this.lblSystem = new System.Windows.Forms.Label();
             this.systemDetailsCombo = new System.Windows.Forms.ComboBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.lblDetailsRoms = new System.Windows.Forms.Label();
-            this.lblDetailsWheels = new System.Windows.Forms.Label();
-            this.lblDetailsVideos = new System.Windows.Forms.Label();
-            this.lblDetailsThemes = new System.Windows.Forms.Label();
-            this.lblDetailsArt1 = new System.Windows.Forms.Label();
-            this.lblDetailsArt2 = new System.Windows.Forms.Label();
-            this.lblDetailsArt3 = new System.Windows.Forms.Label();
-            this.lblDetailsArt4 = new System.Windows.Forms.Label();
+            this.detailsSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artwork1DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artwork2DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artwork3DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.artwork4DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wheelArtDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.videoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.themeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mainTabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.auditData)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.detailsGridView)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsSource)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabs
@@ -115,6 +126,37 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All Systems";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel1.Controls.Add(this.systemCountLbl);
+            this.flowLayoutPanel1.Controls.Add(this.gameCountLbl);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 498);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(633, 22);
+            this.flowLayoutPanel1.TabIndex = 6;
+            // 
+            // systemCountLbl
+            // 
+            this.systemCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.systemCountLbl.AutoSize = true;
+            this.systemCountLbl.Location = new System.Drawing.Point(3, 0);
+            this.systemCountLbl.Name = "systemCountLbl";
+            this.systemCountLbl.Size = new System.Drawing.Size(92, 13);
+            this.systemCountLbl.TabIndex = 2;
+            this.systemCountLbl.Text = "xx Systems Found";
+            // 
+            // gameCountLbl
+            // 
+            this.gameCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gameCountLbl.AutoSize = true;
+            this.gameCountLbl.Location = new System.Drawing.Point(101, 0);
+            this.gameCountLbl.Name = "gameCountLbl";
+            this.gameCountLbl.Size = new System.Drawing.Size(96, 13);
+            this.gameCountLbl.TabIndex = 4;
+            this.gameCountLbl.Text = "xxxx Games Found";
             // 
             // allSystemsGridView
             // 
@@ -272,26 +314,6 @@
             this.auditData.DataSetName = "AuditData";
             this.auditData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gameCountLbl
-            // 
-            this.gameCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.gameCountLbl.AutoSize = true;
-            this.gameCountLbl.Location = new System.Drawing.Point(101, 0);
-            this.gameCountLbl.Name = "gameCountLbl";
-            this.gameCountLbl.Size = new System.Drawing.Size(96, 13);
-            this.gameCountLbl.TabIndex = 4;
-            this.gameCountLbl.Text = "xxxx Games Found";
-            // 
-            // systemCountLbl
-            // 
-            this.systemCountLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.systemCountLbl.AutoSize = true;
-            this.systemCountLbl.Location = new System.Drawing.Point(3, 0);
-            this.systemCountLbl.Name = "systemCountLbl";
-            this.systemCountLbl.Size = new System.Drawing.Size(92, 13);
-            this.systemCountLbl.TabIndex = 2;
-            this.systemCountLbl.Text = "xx Systems Found";
-            // 
             // refreshAllBtn
             // 
             this.refreshAllBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -339,6 +361,95 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "System Details";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsRoms);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsWheels);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsVideos);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsThemes);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt1);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt2);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt3);
+            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt4);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 494);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(640, 26);
+            this.flowLayoutPanel2.TabIndex = 15;
+            // 
+            // lblDetailsRoms
+            // 
+            this.lblDetailsRoms.AutoSize = true;
+            this.lblDetailsRoms.Location = new System.Drawing.Point(3, 0);
+            this.lblDetailsRoms.Name = "lblDetailsRoms";
+            this.lblDetailsRoms.Size = new System.Drawing.Size(75, 13);
+            this.lblDetailsRoms.TabIndex = 0;
+            this.lblDetailsRoms.Text = "xxx/xxx ROMs";
+            // 
+            // lblDetailsWheels
+            // 
+            this.lblDetailsWheels.AutoSize = true;
+            this.lblDetailsWheels.Location = new System.Drawing.Point(84, 0);
+            this.lblDetailsWheels.Name = "lblDetailsWheels";
+            this.lblDetailsWheels.Size = new System.Drawing.Size(81, 13);
+            this.lblDetailsWheels.TabIndex = 1;
+            this.lblDetailsWheels.Text = "xxx/xxx Wheels";
+            // 
+            // lblDetailsVideos
+            // 
+            this.lblDetailsVideos.AutoSize = true;
+            this.lblDetailsVideos.Location = new System.Drawing.Point(171, 0);
+            this.lblDetailsVideos.Name = "lblDetailsVideos";
+            this.lblDetailsVideos.Size = new System.Drawing.Size(77, 13);
+            this.lblDetailsVideos.TabIndex = 2;
+            this.lblDetailsVideos.Text = "xxx/xxx Videos";
+            // 
+            // lblDetailsThemes
+            // 
+            this.lblDetailsThemes.AutoSize = true;
+            this.lblDetailsThemes.Location = new System.Drawing.Point(254, 0);
+            this.lblDetailsThemes.Name = "lblDetailsThemes";
+            this.lblDetailsThemes.Size = new System.Drawing.Size(83, 13);
+            this.lblDetailsThemes.TabIndex = 3;
+            this.lblDetailsThemes.Text = "xxx/xxx Themes";
+            // 
+            // lblDetailsArt1
+            // 
+            this.lblDetailsArt1.AutoSize = true;
+            this.lblDetailsArt1.Location = new System.Drawing.Point(343, 0);
+            this.lblDetailsArt1.Name = "lblDetailsArt1";
+            this.lblDetailsArt1.Size = new System.Drawing.Size(67, 13);
+            this.lblDetailsArt1.TabIndex = 4;
+            this.lblDetailsArt1.Text = "xxx/xxx Art 1";
+            // 
+            // lblDetailsArt2
+            // 
+            this.lblDetailsArt2.AutoSize = true;
+            this.lblDetailsArt2.Location = new System.Drawing.Point(416, 0);
+            this.lblDetailsArt2.Name = "lblDetailsArt2";
+            this.lblDetailsArt2.Size = new System.Drawing.Size(67, 13);
+            this.lblDetailsArt2.TabIndex = 5;
+            this.lblDetailsArt2.Text = "xxx/xxx Art 2";
+            // 
+            // lblDetailsArt3
+            // 
+            this.lblDetailsArt3.AutoSize = true;
+            this.lblDetailsArt3.Location = new System.Drawing.Point(489, 0);
+            this.lblDetailsArt3.Name = "lblDetailsArt3";
+            this.lblDetailsArt3.Size = new System.Drawing.Size(67, 13);
+            this.lblDetailsArt3.TabIndex = 6;
+            this.lblDetailsArt3.Text = "xxx/xxx Art 3";
+            // 
+            // lblDetailsArt4
+            // 
+            this.lblDetailsArt4.AutoSize = true;
+            this.lblDetailsArt4.Location = new System.Drawing.Point(562, 0);
+            this.lblDetailsArt4.Name = "lblDetailsArt4";
+            this.lblDetailsArt4.Size = new System.Drawing.Size(67, 13);
+            this.lblDetailsArt4.TabIndex = 7;
+            this.lblDetailsArt4.Text = "xxx/xxx Art 4";
             // 
             // chkIgnoreTheme
             // 
@@ -469,12 +580,26 @@
             this.detailsGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.detailsGridView.AutoGenerateColumns = false;
+            this.detailsGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.detailsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.detailsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gameDataGridViewTextBoxColumn,
+            this.rOMDataGridViewTextBoxColumn,
+            this.artwork1DataGridViewTextBoxColumn1,
+            this.artwork2DataGridViewTextBoxColumn1,
+            this.artwork3DataGridViewTextBoxColumn1,
+            this.artwork4DataGridViewTextBoxColumn1,
+            this.wheelArtDataGridViewTextBoxColumn1,
+            this.videoDataGridViewTextBoxColumn,
+            this.themeDataGridViewTextBoxColumn});
+            this.detailsGridView.DataSource = this.detailsSource;
             this.detailsGridView.Location = new System.Drawing.Point(0, 61);
             this.detailsGridView.Name = "detailsGridView";
             this.detailsGridView.ReadOnly = true;
             this.detailsGridView.Size = new System.Drawing.Size(824, 427);
             this.detailsGridView.TabIndex = 2;
+            this.detailsGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.detailsGridView_CellFormatting);
             // 
             // lblSystem
             // 
@@ -493,106 +618,85 @@
             this.systemDetailsCombo.Name = "systemDetailsCombo";
             this.systemDetailsCombo.Size = new System.Drawing.Size(382, 21);
             this.systemDetailsCombo.TabIndex = 0;
+            this.systemDetailsCombo.SelectedIndexChanged += new System.EventHandler(this.systemDetailsCombo_SelectedIndexChanged);
             // 
-            // flowLayoutPanel1
+            // detailsSource
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel1.Controls.Add(this.systemCountLbl);
-            this.flowLayoutPanel1.Controls.Add(this.gameCountLbl);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 498);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(633, 22);
-            this.flowLayoutPanel1.TabIndex = 6;
+            this.detailsSource.AllowNew = false;
+            this.detailsSource.DataMember = "detailsTable";
+            this.detailsSource.DataSource = this.auditData;
             // 
-            // flowLayoutPanel2
+            // gameDataGridViewTextBoxColumn
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsRoms);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsWheels);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsVideos);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsThemes);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt1);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt2);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt3);
-            this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 494);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(640, 26);
-            this.flowLayoutPanel2.TabIndex = 15;
+            this.gameDataGridViewTextBoxColumn.DataPropertyName = "Game";
+            this.gameDataGridViewTextBoxColumn.HeaderText = "Game";
+            this.gameDataGridViewTextBoxColumn.Name = "gameDataGridViewTextBoxColumn";
+            this.gameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gameDataGridViewTextBoxColumn.Width = 60;
             // 
-            // lblDetailsRoms
+            // rOMDataGridViewTextBoxColumn
             // 
-            this.lblDetailsRoms.AutoSize = true;
-            this.lblDetailsRoms.Location = new System.Drawing.Point(3, 0);
-            this.lblDetailsRoms.Name = "lblDetailsRoms";
-            this.lblDetailsRoms.Size = new System.Drawing.Size(75, 13);
-            this.lblDetailsRoms.TabIndex = 0;
-            this.lblDetailsRoms.Text = "xxx/xxx ROMs";
+            this.rOMDataGridViewTextBoxColumn.DataPropertyName = "ROM";
+            this.rOMDataGridViewTextBoxColumn.HeaderText = "ROM";
+            this.rOMDataGridViewTextBoxColumn.Name = "rOMDataGridViewTextBoxColumn";
+            this.rOMDataGridViewTextBoxColumn.ReadOnly = true;
+            this.rOMDataGridViewTextBoxColumn.Width = 57;
             // 
-            // lblDetailsWheels
+            // artwork1DataGridViewTextBoxColumn1
             // 
-            this.lblDetailsWheels.AutoSize = true;
-            this.lblDetailsWheels.Location = new System.Drawing.Point(84, 0);
-            this.lblDetailsWheels.Name = "lblDetailsWheels";
-            this.lblDetailsWheels.Size = new System.Drawing.Size(81, 13);
-            this.lblDetailsWheels.TabIndex = 1;
-            this.lblDetailsWheels.Text = "xxx/xxx Wheels";
+            this.artwork1DataGridViewTextBoxColumn1.DataPropertyName = "Artwork1";
+            this.artwork1DataGridViewTextBoxColumn1.HeaderText = "Artwork1";
+            this.artwork1DataGridViewTextBoxColumn1.Name = "artwork1DataGridViewTextBoxColumn1";
+            this.artwork1DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.artwork1DataGridViewTextBoxColumn1.Width = 74;
             // 
-            // lblDetailsVideos
+            // artwork2DataGridViewTextBoxColumn1
             // 
-            this.lblDetailsVideos.AutoSize = true;
-            this.lblDetailsVideos.Location = new System.Drawing.Point(171, 0);
-            this.lblDetailsVideos.Name = "lblDetailsVideos";
-            this.lblDetailsVideos.Size = new System.Drawing.Size(77, 13);
-            this.lblDetailsVideos.TabIndex = 2;
-            this.lblDetailsVideos.Text = "xxx/xxx Videos";
+            this.artwork2DataGridViewTextBoxColumn1.DataPropertyName = "Artwork2";
+            this.artwork2DataGridViewTextBoxColumn1.HeaderText = "Artwork2";
+            this.artwork2DataGridViewTextBoxColumn1.Name = "artwork2DataGridViewTextBoxColumn1";
+            this.artwork2DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.artwork2DataGridViewTextBoxColumn1.Width = 74;
             // 
-            // lblDetailsThemes
+            // artwork3DataGridViewTextBoxColumn1
             // 
-            this.lblDetailsThemes.AutoSize = true;
-            this.lblDetailsThemes.Location = new System.Drawing.Point(254, 0);
-            this.lblDetailsThemes.Name = "lblDetailsThemes";
-            this.lblDetailsThemes.Size = new System.Drawing.Size(83, 13);
-            this.lblDetailsThemes.TabIndex = 3;
-            this.lblDetailsThemes.Text = "xxx/xxx Themes";
+            this.artwork3DataGridViewTextBoxColumn1.DataPropertyName = "Artwork3";
+            this.artwork3DataGridViewTextBoxColumn1.HeaderText = "Artwork3";
+            this.artwork3DataGridViewTextBoxColumn1.Name = "artwork3DataGridViewTextBoxColumn1";
+            this.artwork3DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.artwork3DataGridViewTextBoxColumn1.Width = 74;
             // 
-            // lblDetailsArt1
+            // artwork4DataGridViewTextBoxColumn1
             // 
-            this.lblDetailsArt1.AutoSize = true;
-            this.lblDetailsArt1.Location = new System.Drawing.Point(343, 0);
-            this.lblDetailsArt1.Name = "lblDetailsArt1";
-            this.lblDetailsArt1.Size = new System.Drawing.Size(67, 13);
-            this.lblDetailsArt1.TabIndex = 4;
-            this.lblDetailsArt1.Text = "xxx/xxx Art 1";
+            this.artwork4DataGridViewTextBoxColumn1.DataPropertyName = "Artwork4";
+            this.artwork4DataGridViewTextBoxColumn1.HeaderText = "Artwork4";
+            this.artwork4DataGridViewTextBoxColumn1.Name = "artwork4DataGridViewTextBoxColumn1";
+            this.artwork4DataGridViewTextBoxColumn1.ReadOnly = true;
+            this.artwork4DataGridViewTextBoxColumn1.Width = 74;
             // 
-            // lblDetailsArt2
+            // wheelArtDataGridViewTextBoxColumn1
             // 
-            this.lblDetailsArt2.AutoSize = true;
-            this.lblDetailsArt2.Location = new System.Drawing.Point(416, 0);
-            this.lblDetailsArt2.Name = "lblDetailsArt2";
-            this.lblDetailsArt2.Size = new System.Drawing.Size(67, 13);
-            this.lblDetailsArt2.TabIndex = 5;
-            this.lblDetailsArt2.Text = "xxx/xxx Art 2";
+            this.wheelArtDataGridViewTextBoxColumn1.DataPropertyName = "WheelArt";
+            this.wheelArtDataGridViewTextBoxColumn1.HeaderText = "WheelArt";
+            this.wheelArtDataGridViewTextBoxColumn1.Name = "wheelArtDataGridViewTextBoxColumn1";
+            this.wheelArtDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.wheelArtDataGridViewTextBoxColumn1.Width = 76;
             // 
-            // lblDetailsArt3
+            // videoDataGridViewTextBoxColumn
             // 
-            this.lblDetailsArt3.AutoSize = true;
-            this.lblDetailsArt3.Location = new System.Drawing.Point(489, 0);
-            this.lblDetailsArt3.Name = "lblDetailsArt3";
-            this.lblDetailsArt3.Size = new System.Drawing.Size(67, 13);
-            this.lblDetailsArt3.TabIndex = 6;
-            this.lblDetailsArt3.Text = "xxx/xxx Art 3";
+            this.videoDataGridViewTextBoxColumn.DataPropertyName = "Video";
+            this.videoDataGridViewTextBoxColumn.HeaderText = "Video";
+            this.videoDataGridViewTextBoxColumn.Name = "videoDataGridViewTextBoxColumn";
+            this.videoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.videoDataGridViewTextBoxColumn.Width = 59;
             // 
-            // lblDetailsArt4
+            // themeDataGridViewTextBoxColumn
             // 
-            this.lblDetailsArt4.AutoSize = true;
-            this.lblDetailsArt4.Location = new System.Drawing.Point(562, 0);
-            this.lblDetailsArt4.Name = "lblDetailsArt4";
-            this.lblDetailsArt4.Size = new System.Drawing.Size(67, 13);
-            this.lblDetailsArt4.TabIndex = 7;
-            this.lblDetailsArt4.Text = "xxx/xxx Art 4";
+            this.themeDataGridViewTextBoxColumn.DataPropertyName = "Theme";
+            this.themeDataGridViewTextBoxColumn.HeaderText = "Theme";
+            this.themeDataGridViewTextBoxColumn.Name = "themeDataGridViewTextBoxColumn";
+            this.themeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.themeDataGridViewTextBoxColumn.Width = 65;
             // 
             // MainWindow
             // 
@@ -605,16 +709,17 @@
             this.Text = "HyperAudit";
             this.mainTabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.auditData)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.detailsGridView)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.detailsSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -670,6 +775,16 @@
         private System.Windows.Forms.Label lblDetailsArt2;
         private System.Windows.Forms.Label lblDetailsArt3;
         private System.Windows.Forms.Label lblDetailsArt4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn rOMDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artwork1DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artwork2DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artwork3DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn artwork4DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wheelArtDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn videoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn themeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource detailsSource;
     }
 }
 

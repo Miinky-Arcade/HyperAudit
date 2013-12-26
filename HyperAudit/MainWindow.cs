@@ -106,6 +106,20 @@ namespace HyperAudit {
             }
         }
 
+        /// <summary>
+        /// Handler for setting the cell style for the system details view.
+        /// </summary>
+        private void detailsGridView_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e) {
+            string val = e.Value.ToString().ToLower();
+            if (val == "false") {
+                e.CellStyle.BackColor = kColorCellBad;
+                e.Value = "Missing";
+            } else if (val == "true") {
+                e.CellStyle.BackColor = kColorCellGood;
+                e.Value = "Present";
+            }
+        }
+
         // UI handlers
         private void refreshAllBtn_Click(object sender, EventArgs e) {
             refreshAllAuditData();
@@ -121,6 +135,10 @@ namespace HyperAudit {
 
         private void exportDetailsBtn_Click(object sender, EventArgs e) {
             MessageBox.Show("Not yet implemented");
+        }
+
+        private void systemDetailsCombo_SelectedIndexChanged(object sender, EventArgs e) {
+            refreshSelectedSystemDetails();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Globalization;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -85,7 +86,42 @@ namespace HyperAudit {
         /// </summary>
         /// <param name="systemName">Name of the system to fetch details for</param>
         public void refreshSystemDetails(string systemName) {
+            _database.detailsTable.Clear();
 
+            string romsPath = getFullPath("", PathType.ROMs) + "\\{0}";
+            string artDir = getFullPath(kPathToArtworkDir, PathType.Media);
+            string videosDir = getFullPath(kPathToVideosDir, PathType.Media);
+            string themesDir = getFullPath(kPathToThemesDir, PathType.Media);
+            string wheelArtDir = getFullPath(kPathToWheelArtDir, PathType.Media);
+
+            StringSet romsList = getFileList(String.Format(romsPath, systemName));
+            StringSet art1List = getFileList(String.Format(artDir, systemName, 1), kFileExtImage);
+            StringSet art2List = getFileList(String.Format(artDir, systemName, 2), kFileExtImage);
+            StringSet art3List = getFileList(String.Format(artDir, systemName, 3), kFileExtImage);
+            StringSet art4List = getFileList(String.Format(artDir, systemName, 4), kFileExtImage);
+            StringSet wheelArtList = getFileList(String.Format(wheelArtDir, systemName), kFileExtImage);
+            StringSet videosList = getFileList(String.Format(videosDir, systemName), getVideosExtension());
+            StringSet themesList = getFileList(String.Format(themesDir, systemName), kFileExtTheme);
+
+            themesList.Remove("default");
+
+            TextInfo capitalizer = new CultureInfo("en-GB", false).TextInfo;
+
+            StringList gamesList = getListOfGamesFromDatabase(systemName);
+            foreach (string gameName in gamesList) {
+                bool rom = false, art1 = false, art2 = false, art3 = false, art4 = false, 
+                    wheelart = false, video = false, theme = false;
+                rom = romsList.Remove(gameName);
+                art1 = art1List.Remove(gameName);
+                art2 = art2List.Remove(gameName);
+                art3 = art3List.Remove(gameName);
+                art4 = art4List.Remove(gameName);
+                wheelart = wheelArtList.Remove(gameName);
+                video = videosList.Remove(gameName);
+                theme = themesList.Remove(gameName);
+
+                _database.detailsTable.Rows.Add(capitalizer.ToTitleCase(gameName), rom, art1, art2, art3, art4, wheelart, video, theme);
+            }
         }
 
 
