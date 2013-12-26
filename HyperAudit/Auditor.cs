@@ -121,6 +121,10 @@ namespace HyperAudit {
         /// <param name="filename">Path to the file to check</param>
         /// <returns>String representing the MD5 hash of the file</returns>
         private string md5file(string filename) {
+            // TODO: Quick hack to avoid crash
+            if (!File.Exists(filename)) {
+                return filename;
+            }
             using (var md5 = MD5.Create()) {
                 using (var stream = File.OpenRead(filename)) {
                     byte[] result = md5.ComputeHash(stream);
