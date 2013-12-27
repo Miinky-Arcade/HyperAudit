@@ -37,6 +37,7 @@ namespace HyperAudit {
                 systemDetailsCombo.Items.Clear();
                 foreach (string system in auditor.AllSystems) {
                     systemDetailsCombo.Items.Add(system);
+                    systemActionsCombo.Items.Add(system);
                 }
                 systemCountLbl.Text = auditor.AllSystems.Count + " Systems found";
                 gameCountLbl.Text = auditor.TotalGameCount + " Games found";
@@ -212,6 +213,14 @@ namespace HyperAudit {
 
         private void systemDetailsCombo_SelectedIndexChanged(object sender, EventArgs e) {
             refreshSelectedSystemDetails();
+        }
+
+        private void btnActionApply_Click(object sender, EventArgs e) {
+            MessageBox.Show("Not yet implemented");
+        }
+
+        private void btnActionPreview_Click(object sender, EventArgs e) {
+            MessageBox.Show("Not yet implemented");
         }
     }
 }

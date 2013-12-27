@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mainTabs = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabpgAudit = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.systemCountLbl = new System.Windows.Forms.Label();
             this.gameCountLbl = new System.Windows.Forms.Label();
@@ -52,7 +52,7 @@
             this.allSystemsSource = new System.Windows.Forms.BindingSource(this.components);
             this.auditData = new HyperAudit.AuditData();
             this.refreshAllBtn = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabpgDetails = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDetailsRoms = new System.Windows.Forms.Label();
             this.lblDetailsWheels = new System.Windows.Forms.Label();
@@ -74,9 +74,6 @@
             this.filterCombo = new System.Windows.Forms.ComboBox();
             this.refreshDetailsBtn = new System.Windows.Forms.Button();
             this.detailsGridView = new System.Windows.Forms.DataGridView();
-            this.lblSystem = new System.Windows.Forms.Label();
-            this.systemDetailsCombo = new System.Windows.Forms.ComboBox();
-            this.detailsSource = new System.Windows.Forms.BindingSource(this.components);
             this.gameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rOMDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artwork1DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,16 +83,31 @@
             this.wheelArtDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.videoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.themeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.detailsSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lblSystem = new System.Windows.Forms.Label();
+            this.systemDetailsCombo = new System.Windows.Forms.ComboBox();
+            this.tabpgActions = new System.Windows.Forms.TabPage();
+            this.mediaTypeCombo = new System.Windows.Forms.ComboBox();
+            this.lblMediaType = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.systemActionsCombo = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnActionApply = new System.Windows.Forms.Button();
+            this.actionTypeCombo = new System.Windows.Forms.ComboBox();
+            this.lblAction = new System.Windows.Forms.Label();
+            this.btnActionPreview = new System.Windows.Forms.Button();
             this.mainTabs.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabpgAudit.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.auditData)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabpgDetails.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailsGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsSource)).BeginInit();
+            this.tabpgActions.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // mainTabs
@@ -103,26 +115,27 @@
             this.mainTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mainTabs.Controls.Add(this.tabPage1);
-            this.mainTabs.Controls.Add(this.tabPage2);
+            this.mainTabs.Controls.Add(this.tabpgAudit);
+            this.mainTabs.Controls.Add(this.tabpgDetails);
+            this.mainTabs.Controls.Add(this.tabpgActions);
             this.mainTabs.Location = new System.Drawing.Point(6, 6);
             this.mainTabs.Name = "mainTabs";
             this.mainTabs.SelectedIndex = 0;
             this.mainTabs.Size = new System.Drawing.Size(782, 549);
             this.mainTabs.TabIndex = 0;
             // 
-            // tabPage1
+            // tabpgAudit
             // 
-            this.tabPage1.Controls.Add(this.flowLayoutPanel1);
-            this.tabPage1.Controls.Add(this.allSystemsGridView);
-            this.tabPage1.Controls.Add(this.refreshAllBtn);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(774, 523);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "All Systems";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabpgAudit.Controls.Add(this.flowLayoutPanel1);
+            this.tabpgAudit.Controls.Add(this.allSystemsGridView);
+            this.tabpgAudit.Controls.Add(this.refreshAllBtn);
+            this.tabpgAudit.Location = new System.Drawing.Point(4, 22);
+            this.tabpgAudit.Name = "tabpgAudit";
+            this.tabpgAudit.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpgAudit.Size = new System.Drawing.Size(774, 523);
+            this.tabpgAudit.TabIndex = 0;
+            this.tabpgAudit.Text = "All Systems";
+            this.tabpgAudit.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel1
             // 
@@ -322,30 +335,30 @@
             this.refreshAllBtn.UseVisualStyleBackColor = true;
             this.refreshAllBtn.Click += new System.EventHandler(this.refreshAllBtn_Click);
             // 
-            // tabPage2
+            // tabpgDetails
             // 
-            this.tabPage2.Controls.Add(this.flowLayoutPanel2);
-            this.tabPage2.Controls.Add(this.chkIgnoreTheme);
-            this.tabPage2.Controls.Add(this.chkIgnoreArtwork4);
-            this.tabPage2.Controls.Add(this.chkIgnoreArtwork3);
-            this.tabPage2.Controls.Add(this.chkIgnoreArtwork2);
-            this.tabPage2.Controls.Add(this.lblIgnore);
-            this.tabPage2.Controls.Add(this.chkIgnoreArtwork1);
-            this.tabPage2.Controls.Add(this.lblSearch);
-            this.tabPage2.Controls.Add(this.searchField);
-            this.tabPage2.Controls.Add(this.lblFilter);
-            this.tabPage2.Controls.Add(this.filterCombo);
-            this.tabPage2.Controls.Add(this.refreshDetailsBtn);
-            this.tabPage2.Controls.Add(this.detailsGridView);
-            this.tabPage2.Controls.Add(this.lblSystem);
-            this.tabPage2.Controls.Add(this.systemDetailsCombo);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(774, 523);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "System Details";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabpgDetails.Controls.Add(this.flowLayoutPanel2);
+            this.tabpgDetails.Controls.Add(this.chkIgnoreTheme);
+            this.tabpgDetails.Controls.Add(this.chkIgnoreArtwork4);
+            this.tabpgDetails.Controls.Add(this.chkIgnoreArtwork3);
+            this.tabpgDetails.Controls.Add(this.chkIgnoreArtwork2);
+            this.tabpgDetails.Controls.Add(this.lblIgnore);
+            this.tabpgDetails.Controls.Add(this.chkIgnoreArtwork1);
+            this.tabpgDetails.Controls.Add(this.lblSearch);
+            this.tabpgDetails.Controls.Add(this.searchField);
+            this.tabpgDetails.Controls.Add(this.lblFilter);
+            this.tabpgDetails.Controls.Add(this.filterCombo);
+            this.tabpgDetails.Controls.Add(this.refreshDetailsBtn);
+            this.tabpgDetails.Controls.Add(this.detailsGridView);
+            this.tabpgDetails.Controls.Add(this.lblSystem);
+            this.tabpgDetails.Controls.Add(this.systemDetailsCombo);
+            this.tabpgDetails.Location = new System.Drawing.Point(4, 22);
+            this.tabpgDetails.Name = "tabpgDetails";
+            this.tabpgDetails.Padding = new System.Windows.Forms.Padding(3);
+            this.tabpgDetails.Size = new System.Drawing.Size(774, 523);
+            this.tabpgDetails.TabIndex = 1;
+            this.tabpgDetails.Text = "System Details";
+            this.tabpgDetails.UseVisualStyleBackColor = true;
             // 
             // flowLayoutPanel2
             // 
@@ -527,7 +540,7 @@
             // lblFilter
             // 
             this.lblFilter.AutoSize = true;
-            this.lblFilter.Location = new System.Drawing.Point(6, 37);
+            this.lblFilter.Location = new System.Drawing.Point(47, 36);
             this.lblFilter.Name = "lblFilter";
             this.lblFilter.Size = new System.Drawing.Size(32, 13);
             this.lblFilter.TabIndex = 6;
@@ -541,9 +554,9 @@
             "Show All",
             "Show Incompletes",
             "Show Completes"});
-            this.filterCombo.Location = new System.Drawing.Point(56, 34);
+            this.filterCombo.Location = new System.Drawing.Point(85, 34);
             this.filterCombo.Name = "filterCombo";
-            this.filterCombo.Size = new System.Drawing.Size(159, 21);
+            this.filterCombo.Size = new System.Drawing.Size(130, 21);
             this.filterCombo.TabIndex = 5;
             this.filterCombo.SelectedIndexChanged += new System.EventHandler(this.filterDetailsList);
             // 
@@ -586,31 +599,6 @@
             this.detailsGridView.Size = new System.Drawing.Size(774, 427);
             this.detailsGridView.TabIndex = 2;
             this.detailsGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.detailsGridView_CellFormatting);
-            // 
-            // lblSystem
-            // 
-            this.lblSystem.AutoSize = true;
-            this.lblSystem.Location = new System.Drawing.Point(6, 9);
-            this.lblSystem.Name = "lblSystem";
-            this.lblSystem.Size = new System.Drawing.Size(44, 13);
-            this.lblSystem.TabIndex = 1;
-            this.lblSystem.Text = "System:";
-            // 
-            // systemDetailsCombo
-            // 
-            this.systemDetailsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.systemDetailsCombo.FormattingEnabled = true;
-            this.systemDetailsCombo.Location = new System.Drawing.Point(56, 6);
-            this.systemDetailsCombo.Name = "systemDetailsCombo";
-            this.systemDetailsCombo.Size = new System.Drawing.Size(382, 21);
-            this.systemDetailsCombo.TabIndex = 0;
-            this.systemDetailsCombo.SelectedIndexChanged += new System.EventHandler(this.systemDetailsCombo_SelectedIndexChanged);
-            // 
-            // detailsSource
-            // 
-            this.detailsSource.AllowNew = false;
-            this.detailsSource.DataMember = "detailsTable";
-            this.detailsSource.DataSource = this.auditData;
             // 
             // gameDataGridViewTextBoxColumn
             // 
@@ -684,6 +672,153 @@
             this.themeDataGridViewTextBoxColumn.ReadOnly = true;
             this.themeDataGridViewTextBoxColumn.Width = 65;
             // 
+            // detailsSource
+            // 
+            this.detailsSource.AllowNew = false;
+            this.detailsSource.DataMember = "detailsTable";
+            this.detailsSource.DataSource = this.auditData;
+            // 
+            // lblSystem
+            // 
+            this.lblSystem.AutoSize = true;
+            this.lblSystem.Location = new System.Drawing.Point(35, 9);
+            this.lblSystem.Name = "lblSystem";
+            this.lblSystem.Size = new System.Drawing.Size(44, 13);
+            this.lblSystem.TabIndex = 1;
+            this.lblSystem.Text = "System:";
+            // 
+            // systemDetailsCombo
+            // 
+            this.systemDetailsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.systemDetailsCombo.FormattingEnabled = true;
+            this.systemDetailsCombo.Location = new System.Drawing.Point(85, 6);
+            this.systemDetailsCombo.Name = "systemDetailsCombo";
+            this.systemDetailsCombo.Size = new System.Drawing.Size(380, 21);
+            this.systemDetailsCombo.TabIndex = 0;
+            this.systemDetailsCombo.SelectedIndexChanged += new System.EventHandler(this.systemDetailsCombo_SelectedIndexChanged);
+            // 
+            // tabpgActions
+            // 
+            this.tabpgActions.Controls.Add(this.btnActionPreview);
+            this.tabpgActions.Controls.Add(this.actionTypeCombo);
+            this.tabpgActions.Controls.Add(this.lblAction);
+            this.tabpgActions.Controls.Add(this.btnActionApply);
+            this.tabpgActions.Controls.Add(this.dataGridView1);
+            this.tabpgActions.Controls.Add(this.mediaTypeCombo);
+            this.tabpgActions.Controls.Add(this.lblMediaType);
+            this.tabpgActions.Controls.Add(this.label1);
+            this.tabpgActions.Controls.Add(this.systemActionsCombo);
+            this.tabpgActions.Location = new System.Drawing.Point(4, 22);
+            this.tabpgActions.Name = "tabpgActions";
+            this.tabpgActions.Size = new System.Drawing.Size(774, 523);
+            this.tabpgActions.TabIndex = 2;
+            this.tabpgActions.Text = "System Actions";
+            this.tabpgActions.UseVisualStyleBackColor = true;
+            // 
+            // mediaTypeCombo
+            // 
+            this.mediaTypeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.mediaTypeCombo.FormattingEnabled = true;
+            this.mediaTypeCombo.Items.AddRange(new object[] {
+            "ROMs",
+            "Wheelart",
+            "Videos",
+            "Themes",
+            "Artwork 1",
+            "Artwork 2",
+            "Artwork 3",
+            "Artwork 4"});
+            this.mediaTypeCombo.Location = new System.Drawing.Point(85, 33);
+            this.mediaTypeCombo.Name = "mediaTypeCombo";
+            this.mediaTypeCombo.Size = new System.Drawing.Size(107, 21);
+            this.mediaTypeCombo.TabIndex = 5;
+            // 
+            // lblMediaType
+            // 
+            this.lblMediaType.AutoSize = true;
+            this.lblMediaType.Location = new System.Drawing.Point(17, 36);
+            this.lblMediaType.Name = "lblMediaType";
+            this.lblMediaType.Size = new System.Drawing.Size(62, 13);
+            this.lblMediaType.TabIndex = 4;
+            this.lblMediaType.Text = "Media type:";
+            this.lblMediaType.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(35, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "System:";
+            // 
+            // systemActionsCombo
+            // 
+            this.systemActionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.systemActionsCombo.FormattingEnabled = true;
+            this.systemActionsCombo.Location = new System.Drawing.Point(85, 6);
+            this.systemActionsCombo.Name = "systemActionsCombo";
+            this.systemActionsCombo.Size = new System.Drawing.Size(380, 21);
+            this.systemActionsCombo.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 60);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(768, 428);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // btnActionApply
+            // 
+            this.btnActionApply.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActionApply.Location = new System.Drawing.Point(693, 494);
+            this.btnActionApply.Name = "btnActionApply";
+            this.btnActionApply.Size = new System.Drawing.Size(75, 23);
+            this.btnActionApply.TabIndex = 7;
+            this.btnActionApply.Text = "Apply";
+            this.btnActionApply.UseVisualStyleBackColor = true;
+            this.btnActionApply.Click += new System.EventHandler(this.btnActionApply_Click);
+            // 
+            // actionTypeCombo
+            // 
+            this.actionTypeCombo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.actionTypeCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.actionTypeCombo.FormattingEnabled = true;
+            this.actionTypeCombo.Items.AddRange(new object[] {
+            "List unmatched files",
+            "List unmatched ignoring regions/revisions",
+            "List unmatched ignoring regions/revisions, excluding Asian/Proto/Beta",
+            "Attempt to fill missing files"});
+            this.actionTypeCombo.Location = new System.Drawing.Point(282, 33);
+            this.actionTypeCombo.Name = "actionTypeCombo";
+            this.actionTypeCombo.Size = new System.Drawing.Size(405, 21);
+            this.actionTypeCombo.TabIndex = 9;
+            // 
+            // lblAction
+            // 
+            this.lblAction.AutoSize = true;
+            this.lblAction.Location = new System.Drawing.Point(239, 37);
+            this.lblAction.Name = "lblAction";
+            this.lblAction.Size = new System.Drawing.Size(37, 13);
+            this.lblAction.TabIndex = 8;
+            this.lblAction.Text = "Action";
+            // 
+            // btnActionPreview
+            // 
+            this.btnActionPreview.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnActionPreview.Location = new System.Drawing.Point(693, 33);
+            this.btnActionPreview.Name = "btnActionPreview";
+            this.btnActionPreview.Size = new System.Drawing.Size(75, 23);
+            this.btnActionPreview.TabIndex = 10;
+            this.btnActionPreview.Text = "Preview";
+            this.btnActionPreview.UseVisualStyleBackColor = true;
+            this.btnActionPreview.Click += new System.EventHandler(this.btnActionPreview_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -694,18 +829,21 @@
             this.Name = "MainWindow";
             this.Text = "HyperAudit";
             this.mainTabs.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabpgAudit.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.allSystemsSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.auditData)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabpgDetails.ResumeLayout(false);
+            this.tabpgDetails.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.detailsGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detailsSource)).EndInit();
+            this.tabpgActions.ResumeLayout(false);
+            this.tabpgActions.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -713,8 +851,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl mainTabs;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabpgAudit;
+        private System.Windows.Forms.TabPage tabpgDetails;
         private System.Windows.Forms.Button refreshAllBtn;
         private System.Windows.Forms.Label systemCountLbl;
         private System.Windows.Forms.ComboBox systemDetailsCombo;
@@ -769,6 +907,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn videoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn themeDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource detailsSource;
+        private System.Windows.Forms.TabPage tabpgActions;
+        private System.Windows.Forms.ComboBox mediaTypeCombo;
+        private System.Windows.Forms.Label lblMediaType;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox systemActionsCombo;
+        private System.Windows.Forms.ComboBox actionTypeCombo;
+        private System.Windows.Forms.Label lblAction;
+        private System.Windows.Forms.Button btnActionApply;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnActionPreview;
     }
 }
 
