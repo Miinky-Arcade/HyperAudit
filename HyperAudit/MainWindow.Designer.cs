@@ -52,7 +52,6 @@
             this.allSystemsSource = new System.Windows.Forms.BindingSource(this.components);
             this.auditData = new HyperAudit.AuditData();
             this.refreshAllBtn = new System.Windows.Forms.Button();
-            this.exportAllBtn = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblDetailsRoms = new System.Windows.Forms.Label();
@@ -73,7 +72,6 @@
             this.searchField = new System.Windows.Forms.TextBox();
             this.lblFilter = new System.Windows.Forms.Label();
             this.filterCombo = new System.Windows.Forms.ComboBox();
-            this.exportDetailsBtn = new System.Windows.Forms.Button();
             this.refreshDetailsBtn = new System.Windows.Forms.Button();
             this.detailsGridView = new System.Windows.Forms.DataGridView();
             this.lblSystem = new System.Windows.Forms.Label();
@@ -110,7 +108,7 @@
             this.mainTabs.Location = new System.Drawing.Point(6, 6);
             this.mainTabs.Name = "mainTabs";
             this.mainTabs.SelectedIndex = 0;
-            this.mainTabs.Size = new System.Drawing.Size(832, 549);
+            this.mainTabs.Size = new System.Drawing.Size(782, 549);
             this.mainTabs.TabIndex = 0;
             // 
             // tabPage1
@@ -118,11 +116,10 @@
             this.tabPage1.Controls.Add(this.flowLayoutPanel1);
             this.tabPage1.Controls.Add(this.allSystemsGridView);
             this.tabPage1.Controls.Add(this.refreshAllBtn);
-            this.tabPage1.Controls.Add(this.exportAllBtn);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(824, 523);
+            this.tabPage1.Size = new System.Drawing.Size(774, 523);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "All Systems";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -135,7 +132,7 @@
             this.flowLayoutPanel1.Controls.Add(this.gameCountLbl);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 498);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(633, 22);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(687, 22);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // systemCountLbl
@@ -188,7 +185,7 @@
             this.allSystemsGridView.Location = new System.Drawing.Point(0, 0);
             this.allSystemsGridView.Name = "allSystemsGridView";
             this.allSystemsGridView.ReadOnly = true;
-            this.allSystemsGridView.Size = new System.Drawing.Size(824, 488);
+            this.allSystemsGridView.Size = new System.Drawing.Size(774, 488);
             this.allSystemsGridView.TabIndex = 5;
             this.allSystemsGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.allSystemsGridView_CellFormatting);
             // 
@@ -317,24 +314,13 @@
             // refreshAllBtn
             // 
             this.refreshAllBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshAllBtn.Location = new System.Drawing.Point(639, 494);
+            this.refreshAllBtn.Location = new System.Drawing.Point(693, 494);
             this.refreshAllBtn.Name = "refreshAllBtn";
             this.refreshAllBtn.Size = new System.Drawing.Size(75, 23);
             this.refreshAllBtn.TabIndex = 1;
             this.refreshAllBtn.Text = "Refresh";
             this.refreshAllBtn.UseVisualStyleBackColor = true;
             this.refreshAllBtn.Click += new System.EventHandler(this.refreshAllBtn_Click);
-            // 
-            // exportAllBtn
-            // 
-            this.exportAllBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportAllBtn.Location = new System.Drawing.Point(720, 494);
-            this.exportAllBtn.Name = "exportAllBtn";
-            this.exportAllBtn.Size = new System.Drawing.Size(98, 23);
-            this.exportAllBtn.TabIndex = 0;
-            this.exportAllBtn.Text = "Export to CSV";
-            this.exportAllBtn.UseVisualStyleBackColor = true;
-            this.exportAllBtn.Click += new System.EventHandler(this.exportAllBtn_Click);
             // 
             // tabPage2
             // 
@@ -349,7 +335,6 @@
             this.tabPage2.Controls.Add(this.searchField);
             this.tabPage2.Controls.Add(this.lblFilter);
             this.tabPage2.Controls.Add(this.filterCombo);
-            this.tabPage2.Controls.Add(this.exportDetailsBtn);
             this.tabPage2.Controls.Add(this.refreshDetailsBtn);
             this.tabPage2.Controls.Add(this.detailsGridView);
             this.tabPage2.Controls.Add(this.lblSystem);
@@ -357,7 +342,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(824, 523);
+            this.tabPage2.Size = new System.Drawing.Size(774, 523);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "System Details";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -376,7 +361,7 @@
             this.flowLayoutPanel2.Controls.Add(this.lblDetailsArt4);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 494);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(640, 26);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(684, 23);
             this.flowLayoutPanel2.TabIndex = 15;
             // 
             // lblDetailsRoms
@@ -524,7 +509,7 @@
             // 
             this.lblSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSearch.AutoSize = true;
-            this.lblSearch.Location = new System.Drawing.Point(545, 37);
+            this.lblSearch.Location = new System.Drawing.Point(495, 37);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(44, 13);
             this.lblSearch.TabIndex = 8;
@@ -533,7 +518,7 @@
             // searchField
             // 
             this.searchField.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchField.Location = new System.Drawing.Point(595, 33);
+            this.searchField.Location = new System.Drawing.Point(545, 33);
             this.searchField.Name = "searchField";
             this.searchField.Size = new System.Drawing.Size(223, 20);
             this.searchField.TabIndex = 7;
@@ -562,21 +547,10 @@
             this.filterCombo.TabIndex = 5;
             this.filterCombo.SelectedIndexChanged += new System.EventHandler(this.filterDetailsList);
             // 
-            // exportDetailsBtn
-            // 
-            this.exportDetailsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.exportDetailsBtn.Location = new System.Drawing.Point(730, 494);
-            this.exportDetailsBtn.Name = "exportDetailsBtn";
-            this.exportDetailsBtn.Size = new System.Drawing.Size(88, 23);
-            this.exportDetailsBtn.TabIndex = 4;
-            this.exportDetailsBtn.Text = "Export to CSV";
-            this.exportDetailsBtn.UseVisualStyleBackColor = true;
-            this.exportDetailsBtn.Click += new System.EventHandler(this.exportDetailsBtn_Click);
-            // 
             // refreshDetailsBtn
             // 
             this.refreshDetailsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.refreshDetailsBtn.Location = new System.Drawing.Point(649, 494);
+            this.refreshDetailsBtn.Location = new System.Drawing.Point(693, 494);
             this.refreshDetailsBtn.Name = "refreshDetailsBtn";
             this.refreshDetailsBtn.Size = new System.Drawing.Size(75, 23);
             this.refreshDetailsBtn.TabIndex = 3;
@@ -609,7 +583,7 @@
             this.detailsGridView.Location = new System.Drawing.Point(0, 61);
             this.detailsGridView.Name = "detailsGridView";
             this.detailsGridView.ReadOnly = true;
-            this.detailsGridView.Size = new System.Drawing.Size(824, 427);
+            this.detailsGridView.Size = new System.Drawing.Size(774, 427);
             this.detailsGridView.TabIndex = 2;
             this.detailsGridView.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.detailsGridView_CellFormatting);
             // 
@@ -714,9 +688,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(844, 561);
+            this.ClientSize = new System.Drawing.Size(794, 561);
             this.Controls.Add(this.mainTabs);
-            this.MinimumSize = new System.Drawing.Size(860, 600);
+            this.MinimumSize = new System.Drawing.Size(810, 600);
             this.Name = "MainWindow";
             this.Text = "HyperAudit";
             this.mainTabs.ResumeLayout(false);
@@ -742,13 +716,11 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button refreshAllBtn;
-        private System.Windows.Forms.Button exportAllBtn;
         private System.Windows.Forms.Label systemCountLbl;
         private System.Windows.Forms.ComboBox systemDetailsCombo;
         private System.Windows.Forms.Label lblSystem;
         private System.Windows.Forms.DataGridView detailsGridView;
         private System.Windows.Forms.Label gameCountLbl;
-        private System.Windows.Forms.Button exportDetailsBtn;
         private System.Windows.Forms.Button refreshDetailsBtn;
         private System.Windows.Forms.BindingSource allSystemsSource;
         private System.Windows.Forms.DataGridView allSystemsGridView;

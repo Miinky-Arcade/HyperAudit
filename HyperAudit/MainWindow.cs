@@ -210,14 +210,6 @@ namespace HyperAudit {
             refreshSelectedSystemDetails();
         }
 
-        private void exportAllBtn_Click(object sender, EventArgs e) {
-            MessageBox.Show("Not yet implemented");
-        }
-
-        private void exportDetailsBtn_Click(object sender, EventArgs e) {
-            MessageBox.Show("Not yet implemented");
-        }
-
         private void systemDetailsCombo_SelectedIndexChanged(object sender, EventArgs e) {
             refreshSelectedSystemDetails();
         }
